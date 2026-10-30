@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सिक्योरिटी गार्ड भर्ती - आवेदन फॉर्म</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 6px solid #1e3a8a;
+        }
+        .company-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .company-header h2 {
+            color: #1e3a8a;
+            margin: 0 0 5px 0;
+            font-size: 24px;
+        }
+        .company-header p {
+            color: #6b7280;
+            margin: 0;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #374151;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        .form-group input:focus {
+            border-color: #1e3a8a;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        .fee-section {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+        .fee-amount {
+            font-size: 22px;
+            font-weight: bold;
+            color: #166534;
+            margin: 5px 0;
+        }
+        .upi-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: background 0.2s;
+        }
+        .upi-btn:hover {
+            background-color: #1d4ed8;
+        }
+        .info-text {
+            font-size: 12px;
+            color: #6b7280;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="company-header">
+        <h2>प्राइम सिक्योरिटी सर्विसेज</h2>
+        <p>सिक्योरिटी गार्ड पद के लिए आधिकारिक आवेदन फॉर्म</p>
+    </div>
+
+    <form id="guardForm" onsubmit="event.preventDefault();">
+        <!-- नाम -->
+        <div class="form-group">
+            <label for="fullName">आवेदक का पूरा नाम (Full Name):</label>
+            <input type="text" id="fullName" placeholder="अपना नाम लिखें" required>
+        </div>
+
+        <!-- पिता का नाम -->
+        <div class="form-group">
+            <label for="fatherName">पिता का नाम (Father's Name):</label>
+            <input type="text" id="fatherName" placeholder="पिता का नाम लिखें" required>
+        </div>
+
+        <!-- जन्म तिथि -->
+        <div class="form-group">
+            <label for="dob">जन्म तिथि (Date of Birth):</label>
+            <input type="date" id="dob" required>
+        </div>
+
+        <!-- आधार कार्ड नंबर -->
+        <div class="form-group">
+            <label for="aadhaar">आधार नंबर (Aadhaar Number):</label>
+            <input type="text" id="aadhaar" pattern="[0-89240302670-9]{12}" maxlength="12" placeholder="12 अंकों का आधार नंबर" required>
+        </div>
+
+        <!-- फीस और भुगतान भाग -->
+        <div class="fee-section">
+            <label style="font-weight: 600; color: #1f2937;">अनिवार्य आवेदन शुल्क (Application Fee):</label>
+            <div class="fee-amount">₹100.00</div>
+        </div>
+
+        <!-- यूपीआई भुगतान बटन -->
+        <a href="upi://pay?pa=8924030267@upi&pn=Prime%20Security&am=100.00&cu=INR" class="upi-btn">
+            फीस जमा करें और फॉर्म सबमिट करें
+        </a>
+        
+        <p class="info-text">नोट: बटन पर क्लिक करने पर आपका यूपीआई ऐप खुलेगा। भुगतान सफल होने पर ही आवेदन मान्य होगा।</p>
+    </form>
+</div>
+
+</body>
+</html>
